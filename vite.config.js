@@ -6,7 +6,21 @@ import path from 'path'
 export default defineConfig({
   plugins: [react()],
   server: {
-    allowedHosts: true
+    host: '0.0.0.0', // Bind to all interfaces for container access
+    port: 5173,
+    strictPort: true,
+    // Allow all hosts - essential for Modal tunnel URLs
+    allowedHosts: true,
+    watch: {
+      // Enable polling for better file change detection in containers
+      usePolling: true,
+      interval: 100, // Check every 100ms for responsive HMR
+    },
+    hmr: {
+      // Ensure HMR works in container environment
+      port: 5173,
+      clientPort: 5173
+    }
   },
   resolve: {
     alias: {
@@ -15,10 +29,11 @@ export default defineConfig({
     extensions: ['.mjs', '.js', '.jsx', '.ts', '.tsx', '.json']
   },
   optimizeDeps: {
+    include: ['react', 'react-dom'],
     esbuildOptions: {
       loader: {
         '.js': 'jsx',
       },
     },
   },
-}) 
+})
