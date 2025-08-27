@@ -1,21 +1,10 @@
 import Layout from "./Layout.jsx";
-
 import Home from "./Home";
-
-import History from "./History";
-
-import Settings from "./Settings";
 
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 
 const PAGES = {
-    
     Home: Home,
-    
-    History: History,
-    
-    Settings: Settings,
-    
 }
 
 function _getCurrentPage(url) {
@@ -44,10 +33,6 @@ function PagesContent() {
                 
                 
                 <Route path="/Home" element={<Home />} />
-                
-                <Route path="/History" element={<History />} />
-                
-                <Route path="/Settings" element={<Settings />} />
                 
             </Routes>
         </Layout>

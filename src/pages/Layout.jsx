@@ -83,7 +83,7 @@ export default function Layout({ children, currentPageName }) {
             <Home className="h-5 w-5" />
             <span>Home</span>
           </Link>
-          <Link
+          {/* <Link
             to={createPageUrl("History")}
             className={`flex items-center space-x-3 px-3 py-2 rounded-md transition-colors ${
               currentPageName === "History" ? "bg-blue-50 text-blue-700" : "hover:bg-gray-100"
@@ -92,8 +92,8 @@ export default function Layout({ children, currentPageName }) {
           >
             <Clock className="h-5 w-5" />
             <span>Search History</span>
-          </Link>
-          <Link
+          </Link> */}
+          {/* <Link
             to={createPageUrl("Settings")}
             className={`flex items-center space-x-3 px-3 py-2 rounded-md transition-colors ${
               currentPageName === "Settings" ? "bg-blue-50 text-blue-700" : "hover:bg-gray-100"
@@ -102,7 +102,7 @@ export default function Layout({ children, currentPageName }) {
           >
             <Settings className="h-5 w-5" />
             <span>Settings</span>
-          </Link>
+          </Link> */}
         </nav>
 
         <div className="absolute bottom-0 left-0 right-0 p-4">
