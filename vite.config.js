@@ -4,7 +4,19 @@ import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(),
+  {
+    name: 'iframe-hmr',
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        // Allow iframe embedding
+        res.setHeader('X-Frame-Options', 'ALLOWALL');
+        res.setHeader('Content-Security-Policy', "frame-ancestors *;");
+        next();
+      });
+    }
+  }
+  ],
   server: {
     host: '0.0.0.0', // Bind to all interfaces for container access
     port: 5173,
