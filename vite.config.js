@@ -29,9 +29,8 @@ export default defineConfig({
       interval: 100, // Check every 100ms for responsive HMR
     },
     hmr: {
-      // Ensure HMR works in container environment
-      port: 5173,
-      protocol: 'wss'
+      protocol: 'wss',
+      clientPort: 443
     }
   },
   resolve: {
