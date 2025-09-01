@@ -30,7 +30,7 @@ export default defineConfig({
     },
     hmr: {
       // Ensure HMR works in container environment
-      port: 5173
+      port: 5173,
       protocol: 'wss'
     }
   },
